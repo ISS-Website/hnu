@@ -120,7 +120,59 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        /* Add these new styles to the style section */
+        .gallery-section {
+            position: relative;
+            z-index: 1;  /* Ensure it's above the body overlay */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 120px 20px;  /* Extra bottom padding for footer */
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            transition: transform 0.3s ease;
+            background: white;  /* Add white background */
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            opacity: 1;  /* Ensure full opacity */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Make gallery responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Add this new style */
+        .footer-spacer {
+            height: 80px;  /* Match footer height */
+            width: 100%;
+            visibility: hidden;  /* Make it invisible but maintain space */
+        }
     </style>
+</head>
 <body>
     <header class="header">
         <div class="logo">
@@ -142,6 +194,22 @@
             </a>
         </div>
     </main>
+
+    <section class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="chic-essential.png" alt="Chic, essential & timeless">
+            </div>
+            <div class="gallery-item">
+                <img src="group-pose.png" alt="H&U Apparel Group">
+            </div>
+            <div class="gallery-item">
+                <img src="cozy-stylish.png" alt="Cozy, stylish & versatile">
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-spacer"></div>
 
     <footer class="footer">
         <p>© 2025 H&U Apparel. All rights reserved.</p>
